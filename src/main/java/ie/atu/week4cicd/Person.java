@@ -1,9 +1,6 @@
 package ie.atu.week4cicd;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,19 +10,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Person {
 
-    @NotBlank(message="You must enter a name")
+    @NotBlank(message="You must enter a name!")
     private String name;
-    @NotBlank(message="You must enter a title")
+    @NotBlank(message="You must enter a title!")
     private String title;
-    @PositiveOrZero(message="You must enter a valid id")
+    @PositiveOrZero(message="You must enter a valid id!")
     private int employeeId;
-    @PositiveOrZero(message="You must enter a valid age")
+    @Min(value=18, message="Your age should be 18 or older!")
     private int age;
-    @Email(message="You must enter a valid email")
+    @Email(message="You must enter a valid email!")
     private String email;
-    @NotBlank(message="You must enter a position")
+    @NotBlank(message="You must enter a position!")
     private String position;
-    @NotBlank(message="You must enter a department")
+    @NotBlank(message="You must enter a department!")
     private String department;
 
 }
